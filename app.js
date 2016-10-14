@@ -1,10 +1,13 @@
 console.log('hello world')
-var interval;
+	var interval;
 
 
+	var timer;
 function reset(){
-	var timer = 5;
-	interval = setInterval(function (){
+	console.log(timer);
+	
+		interval = setInterval(function (){
+
 		timer--;
 		var minute = parseInt(timer/60, 10);
 		console.log(minute);
@@ -16,9 +19,6 @@ function reset(){
 			seconde = '0' + seconde;
 		}
 								
-		$("#minute").html(minute);
-		$("#seconde").html(seconde);
-		
 		if(timer===0){
 			clearInterval(interval);
 		}
@@ -28,9 +28,14 @@ function reset(){
 	}, 1000);
 }
 
+$("#go").click(function(){
+timer = $("#seconde").val();
+console.log(timer);
 reset();
+});
 
-$("button").click(function(){
+
+$("#reset").click(function(){
 			reset();
 
 });
