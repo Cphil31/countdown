@@ -1,9 +1,9 @@
 console.log('hello world')
-var timer = 120;
 var interval;
 
 
 function reset(){
+	var timer = 5;
 	interval = setInterval(function (){
 		timer--;
 		var minute = parseInt(timer/60, 10);
@@ -15,11 +15,7 @@ function reset(){
 		if(seconde < 10){
 			seconde = '0' + seconde;
 		}
-		
-		
-		
-				
-	
+								
 		$("#minute").html(minute);
 		$("#seconde").html(seconde);
 		
@@ -27,11 +23,18 @@ function reset(){
 			clearInterval(interval);
 		}
 		
+
+	
 	}, 1000);
 }
 
-
 reset();
+
+$("button").click(function(){
+			reset();
+
+});
+
 
 // function twoDigit(number) {
 //   var twodigit = number >= 10 ? number : "0"+number.toString();
