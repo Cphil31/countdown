@@ -7,7 +7,7 @@ function reset(){
 	console.log(timer);
 	
 		interval = setInterval(function (){
-
+			
 		timer--;
 		var minute = parseInt(timer/60, 10);
 		console.log(minute);
@@ -23,16 +23,11 @@ function reset(){
 			clearInterval(interval);
 		}
 		
-
-	
 	}, 1000);
+reset();
 }
 
-$("#go").click(function(){
-timer = $("#seconde").val();
-console.log(timer);
-reset();
-});
+
 
 
 $("#reset").click(function(){
@@ -40,6 +35,14 @@ $("#reset").click(function(){
 
 });
 
+$("#go").click(function recup(){
+$("#seconde").val();
+$(seconde).html(timer);
+
+
+
+});
+recup();
 
 // function twoDigit(number) {
 //   var twodigit = number >= 10 ? number : "0"+number.toString();
